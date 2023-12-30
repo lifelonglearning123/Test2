@@ -15,38 +15,6 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 
 add_auth(required = True)
 
-"""
-#Creation of rssFeed
-def rssFeed(passed_content):
-    # Create a feed generator object
-    fg = FeedGenerator()
-    fg.title('macaws.ai Social Media Feed')
-    fg.link(href='http://macaws.ai', rel='alternate')
-    fg.description('This is a test RSS feed')
-
-    # Add items to the feed
-    for i, content in enumerate(passed_content):
-        #The title of the RSS feed is the date which they created.
-        current_datetime = datetime.datetime.now()
-        fe = fg.add_entry()
-        fe.title(f'Item {i} - {current_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
-        fe.link(href=f'http://macaws.ai/r2r')
-        fe.description(content)
-
-    # Generate the RSS feed
-    rssfeed = fg.rss_str(pretty=True)
-
-
-
-    # Write to a file with UTF-8 encoding
-    with open('rssfeed.xml', 'w', encoding='utf-8') as f:
-        # Check if rssfeed is a bytes object and decode if necessary
-        if isinstance(rssfeed, bytes):
-            rssfeed = rssfeed.decode('utf-8')
-        f.write(rssfeed)
-
-"""
-
 def prompt_engine(prompt, task):
     tokens_used = 0 
     temp_content =[]
@@ -154,7 +122,6 @@ def Social_Media_Generator():
     
 def main():
     passed_content = Social_Media_Generator()
-    rssFeed(passed_content)
 if  __name__ == "__main__":
     main()
 
