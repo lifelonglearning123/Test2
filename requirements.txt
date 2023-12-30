@@ -1,2 +1,2 @@
 ﻿streamlit==1.29.0
-st_paywall
+st-paywall
