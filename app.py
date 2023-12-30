@@ -6,7 +6,7 @@ import pandas as pd
 import datetime
 import base64 
 import re #Use regular expression
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 from st_paywall import add_auth
 
